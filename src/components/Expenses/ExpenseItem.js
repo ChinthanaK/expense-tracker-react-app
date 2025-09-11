@@ -1,6 +1,6 @@
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
-import Card from "./Card";
+import Card from "../UI/Card";
 import { useState } from "react";
 
 
@@ -10,7 +10,7 @@ const ExpenseItem = (props)=>{
     const expenseLocation = props.location;
     const [title, setTitle] = useState(props.title);
     function buttonClickHandler(){   
-        setTitle("new title")
+        setTitle("New Title")
     }
     return(
         <Card className="expense-item">
