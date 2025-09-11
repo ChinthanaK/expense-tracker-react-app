@@ -7,10 +7,13 @@ function App() {
     { id: "3", date: new Date(2023, 10, 11), title: "Pen", price: 1, location :"Hyderabad" },
     { id: "4", date: new Date(2023, 1, 6), title: "Laptop", price: 200, location : "Mumbai" },
   ]
+  const ExpenseDataFromAppHandler = (userEnteredData) =>{
+    console.log(userEnteredData);
+  }
   return (
     <div className="App">
       <h1>Let's get started</h1>
-      <NewExpense />
+      <NewExpense onExpenseDataFromApp = {ExpenseDataFromAppHandler}/>
       <Expenses  expenses={expenses}/>
     </div>
   );
