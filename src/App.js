@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
@@ -7,14 +8,21 @@ function App() {
     { id: "3", date: new Date(2023, 10, 11), title: "Pen", price: 1, location :"Hyderabad" },
     { id: "4", date: new Date(2023, 1, 6), title: "Laptop", price: 200, location : "Mumbai" },
   ]
+  
+  const [addExpenses, setAddExpenses] = useState(expenses);
   const ExpenseDataFromAppHandler = (userEnteredData) =>{
-    console.log(userEnteredData);
+    setAddExpenses((prevExpenses) =>{
+      return [
+        ...prevExpenses,
+        userEnteredData
+      ]
+    })
   }
   return (
     <div className="App">
       <h1>Let's get started</h1>
       <NewExpense onExpenseDataFromApp = {ExpenseDataFromAppHandler}/>
-      <Expenses  expenses={expenses}/>
+      <Expenses  expenses={addExpenses}/>
     </div>
   );
 }
