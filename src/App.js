@@ -20,7 +20,6 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Let's get started</h1>
       <NewExpense onExpenseDataFromApp = {ExpenseDataFromAppHandler}/>
       <Expenses  expenses={addExpenses}/>
     </div>
